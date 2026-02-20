@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Startup Success Predictor</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(-45deg, #1e3c72, #2a5298, #0f2027, #203a43);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            width: 420px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            animation: slideUp 1s ease;
+        }
+
+        @keyframes slideUp {
+            from {transform: translateY(50px); opacity: 0;}
+            to {transform: translateY(0); opacity: 1;}
+        }
+
+        h2 {
+            text-align: center;
+            color: #1e3c72;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #2a5298;
+            box-shadow: 0 0 8px rgba(42,82,152,0.4);
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 12px;
+            background: #1e3c72;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #2a5298;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>🚀 Startup Success Predictor</h2>
+
+    <form action="/predict" method="post">
+
+        <input type="number" step="any" name="age_first_funding_year" placeholder="Age First Funding Year" required>
+        <input type="number" step="any" name="age_last_funding_year" placeholder="Age Last Funding Year" required>
+        <input type="number" step="any" name="age_first_milestone_year" placeholder="Age First Milestone Year" required>
+        <input type="number" step="any" name="age_last_milestone_year" placeholder="Age Last Milestone Year" required>
+        <input type="number" step="any" name="relationships" placeholder="Relationships" required>
+        <input type="number" step="any" name="funding_rounds" placeholder="Funding Rounds" required>
+        <input type="number" step="any" name="funding_total_usd" placeholder="Funding Total USD" required>
+        <input type="number" step="any" name="milestones" placeholder="Milestones" required>
+        <input type="number" step="any" name="avg_participants" placeholder="Average Participants" required>
+
+        <button type="submit">Predict Outcome</button>
+
+    </form>
+</div>
+
+</body>
+</html>
